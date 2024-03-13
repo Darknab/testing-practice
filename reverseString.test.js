@@ -11,7 +11,7 @@ test('Works with multi word strings', () => {
 test('Throws an error if the string is empty', () => {
   expect(() => {
     reverseString();
-  }).to.throw('Nothing to reverse!');
+  }).toThrow('Nothing to reverse!');
 })
 
 test ('Throws an error if the value is not a string', () => {
