@@ -5,7 +5,7 @@ test('String has been reversed', () => {
 })
 
 test('Works with multi word strings', () => {
-  expect(reverseString('Hello world!')).toBe('!dlrow olleh');
+  expect(reverseString('Hello world!')).toBe('!dlrow olleH');
 })
 
 test('Throws an error if the string is empty', () => {
