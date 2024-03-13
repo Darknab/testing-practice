@@ -19,10 +19,10 @@ test('Divide numbers', () => {
 })
 
 test('Works with decimals', () => {
-  expect(calculate.add(12.3, 52,852)).toBeCloseTo(65.152);
-  expect(calculate.add(12.3, 52,852)).toBeCloseTo(-40.552);
-  expect(calculate.multiply(12.3, 52,852)).toBeCloseTo(650.0796);
-  expect(calculate.divide(12.3, 52,852)).toBeCloseTo(0.2327);
+  expect(calculate.add(12.3, 52.852)).toBeCloseTo(65.152);
+  expect(calculate.substract(12.3, 52.852)).toBeCloseTo(-40.552);
+  expect(calculate.multiply(12.3, 52.852)).toBeCloseTo(650.0796);
+  expect(calculate.divide(12.3, 52.852)).toBeCloseTo(0.2327);
 })
 
 test('Works for numbers stored as characters', () => {
@@ -63,4 +63,19 @@ test('Throws an error if one or both parameters are not numbers', () => {
   expect(()=> {
     calculate.divide('string', 'another string');
   }).toThrow('Only works with numbers');
+})
+
+test('Throws an error if more/less parameters are given', () => {
+  expect(() => {
+    calculate.add();
+  }).toThrow('Need excactly 2 parameters!');
+  expect(() => {
+    calculate.substract(15);
+  }).toThrow('Need excactly 2 parameters!');
+  expect(() => {
+    calculate.multiply(6, 8, 15);
+  }).toThrow('Need excactly 2 parameters!');
+  expect(() => {
+    calculate.divide(6, 8, 15, 6);
+  }).toThrow('Need excactly 2 parameters!');
 })
