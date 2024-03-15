@@ -2,7 +2,6 @@
 
   add(a, b) {
     if (arguments.length !== 2 ) throw new Error('Need excactly 2 parameters!');
-    console.log(this.add.length);
     const first = parseFloat(a);
     const second = parseFloat(b);
     if (this.#checkNumbers(first, second)) {
@@ -44,6 +43,3 @@
     } else return true;
   }
 }
-
-const calculate = new Calculator;
-console.log(calculate.add(2, 6))
